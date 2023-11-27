@@ -1,0 +1,37 @@
+{% extends 'hub/base.html' %}
+
+{% block content %}
+<p><a href="{% url 'createevent' %}" class="my-link">create</a></p>
+<br>
+{% for i in eventlist %}
+    <div style="border:3px solid black;
+    padding:20px;
+    margin-bottom: 20px;">
+        <h2>{{ i.title }}</h2>
+        <br>
+        <p><a href="{% url 'eventdetail' i.slug %}" class="my-link">detail</a></p>
+        <p><a href="{% url 'deleteevent' i.pk %}" class="my-link">delete</a></p>
+        <p><a href="{% url 'updateevent' i.slug %}" class="my-link">update</a></p>
+    </div>
+<style>
+.my-link {
+    color: blue;
+    text-decoration: none;
+    color: white;
+    border: solid 1px black;
+    background-color: lightgray;
+    font-size: 20px
+}
+.my-link:hover {
+    border: solid 1px gray;
+    background-color: gray;
+
+    color: darkred;
+}
+p{
+    display: inline;
+    margin: 10px 10px;
+ }
+</style>
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,13 @@
+{% extends 'hub/base.html' %}
+
+{% block content %}
+
+<h1>DELETE EVENT</h1>
+<form action="{% url 'deleteevent' object.pk %}" method="post">
+        {% csrf_token %}
+        <input type="submit" value="DELETE">
+        <a href="{% url 'eventlist' %}"><input type="button" value="CANCEL"></a>
+</form>
+
+
+{% endblock %}

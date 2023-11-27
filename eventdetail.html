@@ -1,0 +1,16 @@
+{% extends 'hub/base.html' %}
+
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+
+    <p><strong>Category:</strong> {{ object.category }}</p>
+    <p><strong>Description:</strong> {{ object.description }}</p>
+    <p><strong>Requirements:</strong> {{ object.requirements }}</p>
+    <p><strong>Event Date:</strong> {{ object.event_date }}</p>
+    <p><strong>Event Time:</strong> {{ object.event_time }}</p>
+    <p><strong>Age Range:</strong> {{ object.age_range }}</p>
+    <p><strong>Volunteers Quantity Needed:</strong> {{ object.volunteers_quantity_needed }}</p>
+    <p><strong>Event Place:</strong> {{ object.event_place }}</p>
+    <a href="{% url 'eventlist' %}"><input type="button" value="BACK"></a>
+{% endblock %}

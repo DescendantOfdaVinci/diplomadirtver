@@ -1,0 +1,14 @@
+{% extends 'hub/base.html' %}
+
+{% block content %}
+
+<h1>CREATE EVENT</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="CREATE">
+    <a href="{% url 'eventlist' %}"><input type="button" value="BACK"></a>
+</form>
+
+
+{% endblock %}
